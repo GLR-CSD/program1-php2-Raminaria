@@ -43,6 +43,31 @@ class Album
         $this->Prijs = $Prijs;
     }
 
+    public static function getAll(PDO $db): array
+    {
+        // Voorbereiden van de query
+        $stmt = $db->query("SELECT * FROM persoon");
+
+        // Array om personen op te slaan
+        $personen = [];
+
+        // Itereren over de resultaten en personen toevoegen aan de array
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $persoon = new Persoon(
+                $row['id'],
+                $row['voornaam'],
+                $row['achternaam'],
+                $row['telefoonnummer'],
+                $row['email'],
+                $row['opmerkingen']
+            );
+            $personen[] = $persoon;
+        }
+
+        // Retourneer array met personen
+        return $personen;
+    }
+
     /**
      * @return int|null
      */
@@ -158,3 +183,4 @@ class Album
 
 
 }
+

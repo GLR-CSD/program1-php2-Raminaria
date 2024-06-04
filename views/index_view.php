@@ -17,14 +17,14 @@
         <th>Email</th>
         <th>Opmerkingen</th>
     </tr>
-    <?php foreach ($personen as $persoon): ?>
+    <?php foreach ($albums as $album): ?>
         <tr>
-            <td><?= $persoon->getId() ?></td>
-            <td><?= $persoon->getVoornaam() ?></td>
-            <td><?= $persoon->getAchternaam() ?></td>
-            <td><?= $persoon->getTelefoonnummer() ?></td>
-            <td><?= $persoon->getEmail() ?></td>
-            <td><?= $persoon->getOpmerkingen() ?></td>
+            <td><?= $album->getId() ?></td>
+            <td><?= $album->getVoornaam() ?></td>
+            <td><?= $album->getAchternaam() ?></td>
+            <td><?= $album->getTelefoonnummer() ?></td>
+            <td><?= $album->getEmail() ?></td>
+            <td><?= $album->getOpmerkingen() ?></td>
         </tr>
     <?php endforeach; ?>
 </table>
